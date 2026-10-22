@@ -22,13 +22,6 @@ jobs:
         sudo apt-get install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
         pip3 install --user --upgrade buildozer cython virtualenv
 
-    - name: Create Swap Space
-      run: |
-        sudo fallocate -l 4G /swapfile
-        sudo chmod 600 /swapfile
-        sudo mkswap /swapfile
-        sudo swapon /swapfile
-
     - name: Build with Buildozer
       run: |
         export PATH=$PATH:$HOME/.local/bin
